@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "short_name": "calc",
+  "description": "Youcode calculator",
+  "display": "fullscreen",
+  "theme_color": "#3367D6",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon/favicon.ico",
+      "sizes": "240x240",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon/ico-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

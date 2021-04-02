@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="Be Nice, Be Cool, Be Smart">
+  <meta name="theme-color" content="#3367D6">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="icon/favicon.ico">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon/ico.png">
+
+
+  <title>calculator</title>
+</head>
+
+<body>
+  <div class="light" id="calculator" data-tilt>
+    <div class="theme">
+      <label>
+        <svg id="light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-sun">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </label>
+      <label>
+        <svg id="dark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-moon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </label>
+    </div>
+    <div id="result">
+      <label for="resultData">label</label>
+      <textarea id="resultData"></textarea>
+    </div>
+    <span class="num uop">AC</span>
+    <span class="num uop">(</span>
+    <span class="num uop">)</span>
+    <span data-operator="/" class="num operator">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-divide">
+        <circle cx="12" cy="6" r="2"></circle>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <circle cx="12" cy="18" r="2"></circle>
+      </svg>
+    </span>
+    <span class="num">7</span>
+    <span class="num">8</span>
+    <span class="num">9</span>
+    <span data-operator="-" class="num operator">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-minus">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </span>
+    <span class="num">4</span>
+    <span class="num">5</span>
+    <span class="num">6</span>
+    <span data-operator="*" class="num operator">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </span>
+    <span class="num">1</span>
+    <span class="num">2</span>
+    <span class="num">3</span>
+    <span data-operator="+" class="num operator">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-plus">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </span>
+    <span data-operator="memo" class="num memo uop">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-rotate-ccw">
+        <polyline points="1 4 1 10 7 10"></polyline>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+      </svg>
+    </span>
+    <span class="num">0</span>
+    <span class="num">.</span>
+    <span data-operator="=" class="num operator">=</span>
+    <span class="num uop">Sin</span>
+    <span class="num uop">Cos</span>
+    <span class="num uop">Tan</span>
+    <span class="num uop">fn(x)</span>
+  </div>
+
+
+
+
+  <div id="plot"></div>
+
+  <div id="installer" class="available">
+    <button class="button" id="dinstall">Install</button>
+  </div>
+</body>
+<script src="lib/math.js"></script>
+<script src="lib/plotly.js"></script>
+<script src="lib/vanilla.js"></script>
+<script src="app.js"></script>
+
+</html>

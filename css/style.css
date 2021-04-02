@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+textarea,
+button {
+  border: none;
+  outline: none;
+}
+
+.dark {
+  --color-input: #ffffff;
+  --color-number: #ffffff;
+  --bg-buttons: #1f2937;
+  --bg-result: #111827;
+  --bgicon-hover: #ffffff;
+  --color-theme: #6b7280;
+}
+
+.light {
+  --color-input: #111827;
+  --color-number: #111827;
+  --bg-buttons: #f3f4f6;
+  --bg-result: #f3f4f6;
+  --bgicon-hover: #111827;
+  --color-theme: #9ca3af;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #ed21ff 0%, #9e21ff 100%, #9e21ff 100%);
+}
+
+span {
+  color: var(--color-number);
+}
+
+#calculator {
+  border-radius: 8px;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  will-change: transform;
+  overflow: hidden;
+  -webkit-transform: scale(0.88);
+          transform: scale(0.88);
+}
+
+#calculator .theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#calculator .theme label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--color-theme);
+}
+
+#calculator .theme label svg {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#calculator .theme label svg:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: var(--bgicon-hover);
+}
+
+#calculator .operator {
+  color: #ee4444;
+}
+
+#calculator #result {
+  background-color: var(--bg-result);
+  grid-column: span 4;
+  font-size: 33px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#calculator #result label {
+  z-index: -1;
+  width: 0;
+}
+
+#calculator #result #resultData {
+  width: 100%;
+  height: 55%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 22px;
+  background-color: var(--bg-result);
+  padding: 0 8px;
+  color: var(--color-input);
+  resize: none;
+}
+
+#calculator #result #resultData::-webkit-scrollbar {
+  width: 6px;
+}
+
+#calculator #result #resultData::-webkit-scrollbar-track {
+  background: none;
+}
+
+#calculator #result #resultData::-webkit-scrollbar-thumb {
+  background-color: #90a4ae;
+  border-radius: 6px;
+}
+
+#calculator .num {
+  display: -ms-grid;
+  display: grid;
+  width: 70px;
+  height: 70px;
+  place-items: center;
+  cursor: pointer;
+  background-color: var(--bg-buttons);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+#calculator .uop {
+  color: #0061ff;
+}
+
+#plot {
+  position: relative;
+  left: 40px;
+}
+
+#installer {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+#installer .button {
+  border: white 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+#installer .button:hover {
+  color: #9e21ff;
+  background-color: white;
+}
+
+#installer.available {
+  display: initial;
+}
+/*# sourceMappingURL=style.css.map */

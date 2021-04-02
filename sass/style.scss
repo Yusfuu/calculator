@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+textarea,
+button {
+  border: none;
+  outline: none;
+}
+.dark {
+  --color-input: #ffffff;
+  --color-number: #ffffff;
+  --bg-buttons: #1f2937;
+  --bg-result: #111827;
+  --bgicon-hover: #ffffff;
+  --color-theme: #6b7280;
+}
+
+.light {
+  --color-input: #111827;
+  --color-number: #111827;
+  --bg-buttons: #f3f4f6;
+  --bg-result: #f3f4f6;
+  --bgicon-hover: #111827;
+  --color-theme: #9ca3af;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #ed21ff 0%, #9e21ff 100%, #9e21ff 100%);
+}
+
+span {
+  color: var(--color-number);
+}
+
+#calculator {
+  border-radius: 8px;
+  position: relative;
+  display: grid;
+  user-select: none;
+  will-change: transform;
+  overflow: hidden;
+  transform: scale(0.88);
+  .theme {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      cursor: pointer;
+      color: var(--color-theme);
+      svg {
+        transition: 200ms;
+        &:hover {
+          transform: scale(1.2);
+          color: var(--bgicon-hover);
+        }
+      }
+    }
+  }
+  .operator {
+    color: #ee4444;
+  }
+  #result {
+    background-color: var(--bg-result);
+    grid-column: span 4;
+    font-size: 33px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+      z-index: -1;
+      width: 0;
+    }
+    #resultData {
+      width: 100%;
+      height: 55%;
+      align-self: flex-end;
+      font-size: 22px;
+      background-color: var(--bg-result);
+      padding: 0 8px;
+      color: var(--color-input);
+      resize: none;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #90a4ae;
+        border-radius: 6px;
+      }
+    }
+  }
+  .num {
+    display: grid;
+    width: 70px;
+    height: 70px;
+    place-items: center;
+    cursor: pointer;
+    background-color: var(--bg-buttons);
+    transition: 200ms;
+  }
+  .uop {
+    color: #0061ff;
+  }
+}
+
+#plot {
+  position: relative;
+  left: 40px;
+}
+
+#installer {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  .button {
+    border: white 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 300ms ease;
+    &:hover {
+      color: #9e21ff;
+      background-color: white;
+    }
+  }
+}
+
+#installer.available {
+  display: initial;
+}
